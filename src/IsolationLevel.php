@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Hibla\Sql;
 
 /**
@@ -11,9 +13,9 @@ enum IsolationLevel: string implements IsolationLevelInterface
     case READ_UNCOMMITTED = 'READ UNCOMMITTED';
 
     case READ_COMMITTED = 'READ COMMITTED';
-    
+
     case REPEATABLE_READ = 'REPEATABLE READ';
-    
+
     case SERIALIZABLE = 'SERIALIZABLE';
 
     public function getValue(): string
