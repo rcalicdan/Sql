@@ -1,5 +1,5 @@
 {
-    "name": "hibla/sql",
+    "name": "hiblaphp/sql",
     "description": "SQL client contracts for Hibla sql database libraries",
     "type": "library",
     "license": "MIT",
