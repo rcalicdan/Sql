@@ -12,7 +12,29 @@ namespace Hibla\Sql;
 interface RowStream extends \IteratorAggregate
 {
     /**
-     * iterates over the rows.
+     * The number of columns in the streaming result set.
+     */
+    public int $columnCount { get; }
+
+    /**
+     * The column names in the streaming result set.
+     * 
+     * @var array<int, string>
+     */
+    public array $columns { get; }
+
+    /**
+     * Cancels the stream and releases underlying server resources.
+     */
+    public function cancel(): void;
+
+    /**
+     * Checks if the stream has been cancelled.
+     */
+    public function isCancelled(): bool;
+
+    /**
+     * Iterates over the rows.
      *
      * @return \Generator<int, array<string, mixed>>
      */

@@ -9,7 +9,7 @@ use Hibla\Promise\Interfaces\PromiseInterface;
 /**
  * Shared query execution methods common to both client and transaction contexts.
  */
-interface QueryInterface
+interface QueryInterface extends StreamingQueryInterface
 {
     /**
      * Executes any SQL statement and returns full Result object.
@@ -38,16 +38,6 @@ interface QueryInterface
      * @return PromiseInterface<int> Last insert ID
      */
     public function executeGetId(string $sql, array $params = []): PromiseInterface;
-
-    /**
-     * Streams a query row-by-row without buffering in memory.
-     *
-     * @param string $sql SQL query to execute
-     * @param array<int, mixed> $params Optional parameters
-     * @param positive-int $bufferSize Number of rows to buffer internally per read. Defaults to 100.
-     * @return PromiseInterface<RowStream>
-     */
-    public function stream(string $sql, array $params = [], int $bufferSize = 100): PromiseInterface;
 
     /**
      * Executes a SELECT query and returns the first matching row.
