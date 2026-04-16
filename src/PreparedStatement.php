@@ -9,7 +9,7 @@ use Hibla\Promise\Interfaces\PromiseInterface;
 /**
  * Contract for prepared SQL statements.
  */
-interface PreparedStatement
+interface PreparedStatement extends StreamingStatementInterface
 {
     /**
      * Execute the prepared statement with the given parameters.
@@ -18,14 +18,6 @@ interface PreparedStatement
      * @return PromiseInterface<Result>
      */
     public function execute(array $params = []): PromiseInterface;
-
-    /**
-     * Execute the prepared statement returning a stream.
-     *
-     * @param array<int, mixed> $params
-     * @return PromiseInterface<RowStream>
-     */
-    public function executeStream(array $params = []): PromiseInterface;
 
     /**
      * Close the prepared statement.
