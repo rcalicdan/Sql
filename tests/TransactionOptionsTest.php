@@ -498,6 +498,7 @@ describe('immutability', function () {
             ->and($b->attempts)->toBe(2)
             ->and($c->attempts)->toBe(3)
             ->and($a)->not->toBe($b)
-            ->and($b)->not->toBe($c);
+            ->and($b)->not->toBe($c)
+        ;
     });
 });

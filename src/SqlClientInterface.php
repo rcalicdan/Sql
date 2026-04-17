@@ -53,7 +53,7 @@ interface SqlClientInterface extends QueryInterface
     /**
      * Initiates a graceful shutdown of the client.
      *
-     * Stops accepting new work immediately and returns a promise that resolves 
+     * Stops accepting new work immediately and returns a promise that resolves
      * once all in-flight queries and transactions have completed.
      *
      * @return PromiseInterface<void>

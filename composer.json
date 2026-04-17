@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "hiblaphp/promise": "*"
+        "hiblaphp/promise": "^1.0"
     },
     "autoload-dev": {
         "psr-4": {
